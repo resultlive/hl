@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HLRESULT.LIVE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:
+radial-gradient(circle at top,#1b0800,#040404 75%);
+color:white;
+padding:12px;
+overflow-x:hidden;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+/* HEADER */
+
+.header{
+padding:14px 18px;
+border-radius:22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:
+linear-gradient(145deg,
+rgba(255,255,255,0.07),
+rgba(255,255,255,0.03));
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(12px);
+
+box-shadow:
+0 0 25px rgba(0,0,0,0.45);
+
+margin-bottom:18px;
+}
+
+/* LOGO */
+
+.logo{
+font-size:44px;
+font-weight:800;
+}
+
+.logo span{
+color:red;
+text-shadow:
+0 0 12px red;
+}
+
+/* LIVE */
+
+.live{
+
+background:red;
+
+color:white;
+
+min-width:70px;
+
+text-align:center;
+
+padding:12px 16px;
+
+border-radius:16px;
+
+font-size:18px;
+
+font-weight:800;
+
+box-shadow:0 0 12px red;
+
+}
+
+/* NOTICE */
+
+.notice{
+padding:16px;
+border-radius:22px;
+
+background:
+rgba(255,255,255,0.04);
+
+border:2px solid #ff0080;
+
+text-align:center;
+
+font-size:22px;
+
+line-height:1.5;
+
+margin-bottom:18px;
+
+box-shadow:
+0 0 14px rgba(255,0,128,0.22);
+}
+
+/* CLOCK */
+
+.clock{
+text-align:center;
+font-size:56px;
+font-weight:800;
+color:#22c55e;
+margin:14px 0;
+
+text-shadow:
+0 0 10px #22c55e;
+}
+
+/* RESULT */
+
+.result{
+text-align:center;
+font-size:34px;
+font-weight:800;
+margin-bottom:18px;
+color:red;
+
+animation:blink 1s infinite;
+
+text-shadow:
+0 0 10px red;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+/* CARD */
+
+.card{
+min-height:260px;
+padding:20px;
+border-radius:26px;
+
+background:
+linear-gradient(180deg,
+rgba(255,255,255,0.05),
+rgba(255,255,255,0.02));
+
+border:2px solid rgba(255,255,255,0.08);
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+box-shadow:
+0 0 18px rgba(0,0,0,0.4);
+}
+
+/* COLORS */
+
+.green{
+border-color:#22c55e;
+}
+
+.purple{
+border-color:#c026d3;
+}
+
+.blue{
+border-color:#3b82f6;
+}
+
+.orange{
+border-color:#f97316;
+}
+
+.pink{
+border-color:#ec4899;
+}
+
+.teal{
+border-color:#14b8a6;
+}
+
+/* CITY */
+
+.city{
+font-size:30px;
+font-weight:700;
+margin-bottom:14px;
+}
+
+/* NUMBER */
+
+.number{
+font-size:82px;
+font-weight:800;
+color:#22c55e;
+
+text-shadow:
+none;
+
+margin-bottom:10px;
+}
+
+/* LIVE SMALL */
+
+.live-small{
+font-size:30px;
+font-weight:800;
+color:red;
+
+animation:blink 1s infinite;
+
+text-shadow:
+none;
+
+margin:10px 0;
+}
+
+/* TIME */
+
+.time{
+font-size:16px;
+opacity:1;
+text-shadow:none;
+}
+
+/* JOIN */
+
+.join{
+margin-top:22px;
+padding:20px;
+border-radius:26px;
+
+background:
+linear-gradient(180deg,
+rgba(255,255,255,0.05),
+rgba(255,255,255,0.02));
+
+border:3px solid #ffd700;
+border:2px solid #ffcc33;
+
+box-shadow:0 0 14px rgba(255,204,51,0.28);
+}
+
+/* JOIN TITLE */
+
+.join-title{
+text-align:center;
+font-size:25px;
+font-weight:800;
+color:#ffd000;
+margin-bottom:12px;
+line-height:30px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:8px;
+flex-wrap:wrap;
+}
+
+/* ROW */
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+font-size:24px;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+padding-top:24px;
+padding-bottom:120px;
+font-size:25px;
+opacity:0.7;
+}
+
+/* FLOAT BUTTONS */
+
+.float-btn{
+position:fixed;
+right:18px;
+width:72px;
+height:72px;
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+z-index:9999;
+
+animation:float 2s infinite ease-in-out;
+}
+
+/* LANGUAGE */
+
+.language-btn{
+bottom:190px;
+
+background:
+linear-gradient(145deg,#ffd84d,#c99700);
+
+box-shadow:
+0 0 14px rgba(255,208,0,0.35);
+}
+
+.language-btn img{
+width:34px;
+height:34px;
+}
+
+/* TELEGRAM */
+
+.telegram-btn{
+bottom:105px;
+}
+
+.telegram-btn img{
+width:72px;
+height:72px;
+filter:
+drop-shadow(0 0 12px #229ED9);
+}
+
+/* WHATSAPP */
+
+.whatsapp-btn{
+bottom:20px;
+}
+
+.whatsapp-btn img{
+width:72px;
+height:72px;
+
+filter:
+drop-shadow(0 0 12px #00ff66)
+drop-shadow(0 0 28px rgba(0,255,100,0.45));
+}
+
+/* EMOJI */
+
+.emoji{
+display:inline-block;
+margin-right:4px;
+}
+
+.delhi{
+animation:shake 2s infinite;
+}
+
+.mumbai{
+animation:wave 1.5s infinite ease-in-out;
+}
+
+.jaipur{
+animation:flagWave 1s infinite ease-in-out;
+transform-origin:left center;
+}
+
+.bengaluru{
+animation:rocketFly 1.2s infinite ease-in-out;
+}
+
+.kolkata{
+animation:bridgeMove 2s infinite ease-in-out;
+}
+
+.lucknow{
+animation:crownGlow 1.5s infinite ease-in-out;
+}
+
+/* ANIMATION */
+
+@keyframes blink{
+50%{
+opacity:0.45;
+}
+}
+
+@keyframes float{
+50%{
+transform:translateY(-8px);
+}
+}
+
+@keyframes shake{
+25%{transform:rotate(-8deg);}
+50%{transform:rotate(8deg);}
+75%{transform:rotate(-6deg);}
+}
+
+@keyframes wave{
+50%{transform:translateY(-6px);}
+}
+
+@keyframes flagWave{
+25%{transform:skewY(6deg);}
+50%{transform:skewY(-6deg);}
+75%{transform:skewY(4deg);}
+}
+
+@keyframes rocketFly{
+50%{
+transform:
+translateY(-10px)
+rotate(-8deg);
+}
+}
+
+@keyframes bridgeMove{
+50%{
+transform:translateX(4px);
+}
+}
+
+@keyframes crownGlow{
+50%{
+transform:scale(1.15);
+filter:drop-shadow(0 0 10px gold);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.logo{
+font-size:28px;
+}
+
+.live{
+font-size:14px;
+padding:10px 14px;
+}
+
+.notice{
+font-size:15px;
+padding:14px;
+}
+
+.clock{
+font-size:40px;
+}
+
+.result{
+font-size:28px;
+}
+
+.grid{
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.card{
+min-height:220px;
+padding:16px;
+border-radius:22px;
+}
+
+.city{
+font-size:18px;
+}
+
+.number{
+font-size:58px;
+}
+
+.live-small{
+font-size:26px;
+}
+
+.time{
+font-size:16px;
+}
+
+.join-title{
+font-size:20px;
+}
+
+.row{
+font-size:17px;
+}
+
+.footer{
+font-size:16px;
+}
+
+.float-btn{
+width:60px;
+height:60px;
+right:14px;
+}
+
+.language-btn{
+bottom:170px;
+}
+
+.telegram-btn{
+bottom:95px;
+}
+
+.whatsapp-btn{
+bottom:20px;
+}
+
+.telegram-btn img,
+.whatsapp-btn img{
+width:60px;
+height:60px;
+}
+
+.language-btn img{
+width:28px;
+height:28px;
+}
+
+}
+.chartBox{
+
+width:100%;
+max-width:900px;
+
+margin-top:25px;
+
+border-radius:28px;
+overflow:hidden;
+
+border:3px solid #ffd700;
+
+background:#fffdf4;
+
+animation:borderGlow 2s infinite alternate;
+
+box-shadow:
+0 0 20px rgba(255,215,0,0.35);
+
+}
+
+@keyframes borderGlow{
+
+0%{
+box-shadow:0 0 10px rgba(255,215,0,0.25);
+}
+
+100%{
+box-shadow:
+0 0 35px rgba(255,215,0,0.8);
+}
+
+}
+
+.chartTitle{
+
+background:
+linear-gradient(
+180deg,
+#ffe27a,
+#c99500
+);
+
+padding:22px;
+
+text-align:center;
+
+font-size:40px;
+font-weight:900;
+color:#111;
+
+border-bottom:2px solid #b8860b;
+
+}
+
+.chartTable{
+width:100%;
+border-collapse:collapse;
+}
+
+.chartTable th{
+
+background:
+linear-gradient(
+180deg,
+#ffe27a,
+#d4a100
+);
+
+padding:18px 10px;
+
+font-size:32px;
+
+color:#111;
+
+border:2px solid #c79600;
+
+font-weight:900;
+
+}
+
+.chartTable td{
+
+padding:25px 12px;
+
+border:2px solid #ead48b;
+
+text-align:center;
+
+background:#fffef9;
+
+font-weight:800;
+
+}
+
+.gameName{
+
+font-size:28px;
+
+font-weight:900;
+
+color:#111;
+
+}
+
+.moveEmoji{
+
+display:inline-block;
+
+animation:emojiMove 2s infinite ease-in-out;
+
+}
+
+@keyframes emojiMove{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-6px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.gameTime{
+
+font-size:18px;
+
+margin-top:6px;
+
+font-weight:700;
+
+color:#555;
+
+}
+
+.num{
+
+font-size:72px;
+
+font-weight:900;
+
+color:#111;
+
+}
+
+.live{
+
+font-size:34px;
+
+font-weight:900;
+
+color:red;
+
+animation:liveBlink 0.8s infinite;
+
+text-shadow:
+0 0 12px rgba(255,0,0,0.5);
+
+}
+
+@keyframes liveBlink{
+
+0%{
+opacity:1;
+}
+
+50%{
+opacity:0.35;
+}
+
+100%{
+opacity:1;
+}
+
+}
+
+@media(max-width:700px){
+
+.chartTitle{
+font-size:25px;
+padding:16px;
+}
+
+.chartTable th{
+font-size:17px;
+padding:12px 4px;
+}
+
+.chartTable td{
+padding:16px 6px;
+}
+
+.gameName{
+font-size:18px;
+}
+
+.gameTime{
+font-size:12px;
+}
+
+.num{
+font-size:42px;
+}
+
+.live{
+font-size:18px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+
+<div class="header">
+
+<div class="logo">
+HLRESULT<span>.LIVE</span>
+</div>
+
+<div class="live">
+<span style="color:white;">● LIVE</span>
+</div>
+
+</div>
+
+<!-- NOTICE -->
+
+<div class="notice" id="notice">
+📢 सबसे तेज अपडेट पाने के लिए हमारा Telegram चैनल Join करें!
+</div>
+
+<!-- CLOCK -->
+
+<div class="clock" id="clock"></div>
+
+<!-- RESULT -->
+
+<div class="result" id="resultText">
+📡 LIVE RESULT 📡
+</div>
+
+<!-- GRID -->
+
+<div class="grid">
+
+<div class="card green">
+<div class="city" id="city1">
+<span class="emoji delhi">🏛️</span>
+Delhi C.H
+</div>
+
+<div class="number">
+43
+</div>
+
+<div class="time">
+11:00 AM
+</div>
+</div>
+
+<div class="card purple">
+<div class="city" id="city2">
+<span class="emoji mumbai">🌊</span>
+Mumbai
+</div>
+
+<div class="number">
+09
+</div>
+
+<div class="time">
+2:00 PM
+</div>
+</div>
+
+<div class="card blue">
+<div class="city" id="city3">
+<span class="emoji jaipur">🚩</span>
+Jaipur
+</div>
+
+<div class="live-small">
+● LIVE 
+</div>
+
+<div class="time">
+5:00 PM
+</div>
+</div>
+
+<div class="card orange">
+<div class="city" id="city4">
+<span class="emoji bengaluru">🚀</span>
+Bengaluru
+</div>
+
+<div class="live-small">
+● LIVE
+</div>
+
+<div class="time">
+7:20 PM
+</div>
+</div>
+
+<div class="card pink">
+<div class="city" id="city5">
+<span class="emoji kolkata">🌉</span>
+Kolkata
+</div>
+
+<div class="live-small">
+● LIVE
+</div>
+
+<div class="time">
+10:00 PM
+</div>
+</div>
+
+<div class="card teal">
+<div class="city" id="city6">
+<span class="emoji lucknow">👑</span>
+Lucknow
+</div>
+
+<div class="live-small">
+● LIVE
+</div>
+
+<div class="time">
+12:10 AM
+</div>
+</div>
+</script>
+
+<!-- YAHA BONUS BOX CODE PASTE KARO -->
+
+<div id="bonusBox" onclick="openBonus()">
+
+<div id="gift">
+🎁
+</div>
+
+<div id="bonusText">
+CLICK TO UNLOCK
+</div>
+
+</div>
+
+<style>
+
+#bonusBox{
+width:205%;
+max-width:700px;
+padding:12px;
+margin-top:18px;
+border-radius:22px;
+border:3px solid #ffd700;
+box-shadow:0 0 18px rgba(255,215,0,0.7);
+text-align:center;
+background:rgba(20,20,20,0.96);
+cursor:pointer;
+position:relative;
+overflow:hidden;
+}
+
+#gift{
+font-size:55px;
+display:inline-block;
+animation:floatGift 1.5s ease-in-out infinite;
+}
+
+@keyframes floatGift{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+#bonusText{
+font-size:28px;
+font-weight:900;
+color:white;
+margin-top:10px;
+}
+
+@keyframes pop{
+
+0%{
+transform:scale(0.5);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+.paper{
+position:fixed;
+width:12px;
+height:12px;
+top:-20px;
+animation:fall 3s linear forwards;
+z-index:9999;
+pointer-events:none;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(100vh) rotate(720deg);
+opacity:0;
+}
+
+}
+
+</style>
+
+<script>
+
+let unlocked=false;
+
+let showNumber=true;
+
+function openBonus(){
+
+if(unlocked) return;
+
+unlocked=true;
+
+document.getElementById("gift").innerHTML="🎉";
+
+document.getElementById("gift").style.animation="none";
+
+document.getElementById("gift").style.fontSize="85px";
+
+document.getElementById("bonusText").style.animation=
+"pop 0.5s ease";
+
+if(showNumber){
+
+document.getElementById("bonusText").innerHTML=
+"🏆 BONUS WIN : <span style='color:#22c55e;'>05</span>";
+
+}else{
+
+document.getElementById("bonusText").innerHTML=
+"<span style='color:red;'>END</span>";
+
+}
+
+for(let i=0;i<120;i++){
+
+let paper=document.createElement("div");
+
+paper.className="paper";
+
+paper.style.left=Math.random()*100+"%";
+
+paper.style.background=
+`hsl(${Math.random()*360},100%,50%)`;
+
+paper.style.animationDelay=
+Math.random()*2+"s";
+
+document.body.appendChild(paper);
+
+}
+
+}
+
+</script>
+
+</body>
+</div>
+
+<!-- JOIN -->
+
+<div class="join">
+
+<div class="join-title" id="joinTitle">
+⏰ GAME JOIN LAST TIME ⏰
+</div>
+
+<div class="row">
+<span><span class="emoji delhi">🏛️</span> <span id="join1">Delhi C.H</span></span>
+<span>11:00 AM</span>
+</div>
+
+<div class="row">
+<span><span class="emoji mumbai">🌊</span> <span id="join2">Mumbai</span></span>
+<span>2:00 PM</span>
+</div>
+
+<div class="row">
+<span><span class="emoji jaipur">🚩</span> <span id="join3">Jaipur</span></span>
+<span>5:00 PM</span>
+</div>
+
+<div class="row">
+<span><span class="emoji bengaluru">🚀</span> <span id="join4">Bengaluru</span></span>
+<span>7:20 PM</span>
+</div>
+
+<div class="row">
+<span><span class="emoji kolkata">🌉</span> <span id="join5">Kolkata</span></span>
+<span>10:00 PM</span>
+</div>
+
+<div class="row">
+<span><span class="emoji lucknow">👑</span> <span id="join6">Lucknow</span></span>
+<span>12:10 AM</span>
+</div>
+</div>
+<div class="chartBox">
+
+<div class="chartTitle">
+📊 HL LIVE RESULT CHART 📊
+</div>
+
+<table class="chartTable">
+
+<tr>
+
+<th>GAME</th>
+
+<th>YESTERDAY</th>
+
+<th>TODAY</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="gameName">
+<span class="moveEmoji">🏛</span> Delhi C.H
+</div>
+
+<div class="gameTime">
+11:00 AM
+</div>
+
+</td>
+
+<td class="num">
+69
+</td>
+
+<td class="num">
+81
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="gameName">
+<span class="moveEmoji">🌊</span> Mumbai
+</div>
+
+<div class="gameTime">
+2:00 PM
+</div>
+
+</td>
+
+<td class="num">
+42
+</td>
+
+<td class="num">
+51
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="gameName">
+<span class="moveEmoji">🚩</span> Jaipur
+</div>
+
+<div class="gameTime">
+5:00 PM
+</div>
+
+</td>
+
+<td class="num">
+61
+</td>
+
+<td class="live">
+● LIVE
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="gameName">
+<span class="moveEmoji">🚀</span> Bengaluru
+</div>
+
+<div class="gameTime">
+7:20 PM
+</div>
+
+</td>
+
+<td class="num">
+52
+</td>
+
+<td class="live">
+● LIVE
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="gameName">
+<span class="moveEmoji">🌉</span> Kolkata
+</div>
+
+<div class="gameTime">
+10:00 PM
+</div>
+
+</td>
+
+<td class="num">
+05
+</td>
+
+<td class="live">
+● LIVE
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="gameName">
+<span class="moveEmoji">👑</span> Lucknow
+</div>
+
+<div class="gameTime">
+12:10 AM
+</div>
+
+</td>
+
+<td class="num">
+80
+</td>
+
+<td class="live">
+● LIVE
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<!-- DISCLAIMER -->
+
+<div style="
+margin-top:25px;
+padding:18px;
+border-radius:20px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,0,0,0.55);
+color:#d1d5db;
+font-size:15px;
+line-height:1.8;
+box-shadow:0 0 14px rgba(255,0,0,0.20);
+margin-bottom:20px;
+">
+
+<span style="
+color:#ff4d4d;
+font-weight:800;
+font-size:18px;
+">
+⚠ DISCLAIMER
+</span>
+
+<br><br>
+
+Hlresult.live is a non-commercial website. Viewing this website is at your own risk.
+
+<br>
+
+All information displayed on this site is sponsored, and we caution that Matka Gambling may be illegal or banned in your country.
+
+<br>
+
+We are not responsible for any issues, losses, or scams arising from such activities.
+
+<br>
+
+We respect the laws and regulations of all countries.
+
+<br>
+
+If you do not agree with our site's disclaimer, please exit the website immediately.
+
+<br>
+
+Thank you.
+
+</div>
+<div class="footer">
+© 2026 HLRESULT.LIVE ALL RIGHT RESERVED
+</div>
+
+</div>
+
+<!-- LANGUAGE -->
+
+<a href="javascript:void(0)"
+class="float-btn language-btn"
+onclick="toggleLanguage()">
+
+<img id="langIcon"
+src="https://cdn-icons-png.flaticon.com/512/484/484582.png">
+
+</a>
+
+<!-- TELEGRAM -->
+
+<a href="https://t.me/"
+class="float-btn telegram-btn">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+
+</a>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/919112548565"
+class="float-btn whatsapp-btn">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+
+</a>
+
+<script>
+
+/* CLOCK */
+
+function updateClock(){
+
+const now=new Date();
+
+document.getElementById('clock').innerHTML=
+now.toLocaleTimeString(
+'en-US',
+{
+hour12:true
+}
+);
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+/* LANGUAGE */
+
+let hindi=false;
+
+function toggleLanguage(){
+
+hindi=!hindi;
+
+if(hindi){
+
+document.getElementById("notice").innerHTML=
+"📢 सबसे तेज अपडेट पाने के लिए हमारा Telegram चैनल Join करें!";
+
+document.getElementById("resultText").innerHTML=
+"📡 लाइव रिजल्ट 📡";
+
+document.getElementById("joinTitle").innerHTML=
+"⏰ गेम जॉइन लास्ट टाइम ⏰";
+
+document.getElementById("city1").innerHTML=
+'<span class="emoji delhi">🏛️</span> दिल्ली चाँदनी चौक';
+
+document.getElementById("city2").innerHTML=
+'<span class="emoji mumbai">🌊</span> मुंबई';
+
+document.getElementById("city3").innerHTML=
+'<span class="emoji jaipur">🚩</span> जयपुर';
+
+document.getElementById("city4").innerHTML=
+'<span class="emoji bengaluru">🚀</span> बेंगलुरु';
+
+document.getElementById("city5").innerHTML=
+'<span class="emoji kolkata">🌉</span> कोलकाता';
+
+document.getElementById("city6").innerHTML=
+'<span class="emoji lucknow">👑</span> लखनऊ';
+
+document.getElementById("join1").innerHTML=
+'दिल्ली चाँदनी चौक';
+
+document.getElementById("join2").innerHTML=
+'मुंबई';
+
+document.getElementById("join3").innerHTML=
+'जयपुर';
+
+document.getElementById("join4").innerHTML=
+'बेंगलुरु';
+
+document.getElementById("join5").innerHTML=
+'कोलकाता';
+
+document.getElementById("join6").innerHTML=
+'लखनऊ';
+
+document.getElementById("langIcon").src=
+"https://cdn-icons-png.flaticon.com/512/3898/3898082.png";
+
+}else{
+
+document.getElementById("notice").innerHTML=
+"📢 Join our Telegram channel for fastest updates!";
+
+document.getElementById("resultText").innerHTML=
+"📡 LIVE RESULT 📡";
+
+document.getElementById("joinTitle").innerHTML=
+"⏰ GAME JOIN LAST TIME ⏰";
+
+document.getElementById("city1").innerHTML=
+'<span class="emoji delhi">🏛️</span> Delhi C.H';
+
+document.getElementById("city2").innerHTML=
+'<span class="emoji mumbai">🌊</span> Mumbai';
+
+document.getElementById("city3").innerHTML=
+'<span class="emoji jaipur">🚩</span> Jaipur';
+
+document.getElementById("city4").innerHTML=
+'<span class="emoji bengaluru">🚀</span> Bengaluru';
+
+document.getElementById("city5").innerHTML=
+'<span class="emoji kolkata">🌉</span> Kolkata';
+
+document.getElementById("city6").innerHTML=
+'<span class="emoji lucknow">👑</span> Lucknow';
+
+document.getElementById("join1").innerHTML=
+'Delhi C.H';
+
+document.getElementById("join2").innerHTML=
+'Mumbai';
+
+document.getElementById("join3").innerHTML=
+'Jaipur';
+
+document.getElementById("join4").innerHTML=
+'Bengaluru';
+
+document.getElementById("join5").innerHTML=
+'Kolkata';
+
+document.getElementById("join6").innerHTML=
+'Lucknow';
+
+document.getElementById("langIcon").src=
+"https://cdn-icons-png.flaticon.com/512/484/484582.png";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
